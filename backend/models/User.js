@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    userId: {
+    user_id: {
       type: String,
       unique: true,
       required: true,
       trim: true,
     },
 
-    firstName: {
+    first_name: {
       type: String,
       required: true,
       trim: true,
     },
 
-    lastName: {
+    last_name: {
       type: String,
       required: true,
       trim: true,
@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
 
-    mobileNumber: {
+    mobile_number: {
       type: String,
       required: true,
       trim: true,
@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
     },
 
-    birthDate: {
+    birth_date: {
       type: Date,
     },
 
@@ -61,23 +61,23 @@ const userSchema = new mongoose.Schema(
       default: "passenger",
     },
 
-    passengerCategory: {
+    passenger_category: {
       type: String,
       enum: ["regular", "student", "senior_citizen", "pwd"],
     },
 
-    emailVerified: {
+    email_verified: {
       type: Boolean,
       default: false,
     },
 
-    accountStatus: {
+    account_status: {
       type: String,
       enum: ["active", "suspended", "pending"],
       default: "pending",
     },
 
-    profileImage: {
+    profile_image: {
       type: String,
     },
   },

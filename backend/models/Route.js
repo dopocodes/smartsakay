@@ -1,6 +1,6 @@
 const routeSchema = new mongoose.Schema(
   {
-    routeId: {
+    route_id: {
       type: String,
       unique: true,
       required: true,
@@ -35,11 +35,11 @@ const routeSchema = new mongoose.Schema(
       },
     ],
 
-    distanceKm: {
+    distance_km: {
       type: Number,
     },
 
-    estimatedTravelTimeMinutes: {
+    estimated_travel_time_minutes: {
       type: Number,
     },
 
@@ -50,10 +50,10 @@ const routeSchema = new mongoose.Schema(
       pwd: Number,
     },
 
-    vehicleTypes: [
+    vehicle_types: [
       {
         type: String,
-        enum: ["jeepney", "tricycle", "minibus"],
+        enum: ["jeepney", "tricycle", "minibus", "taxi", "bus", "van"],
       },
     ],
 

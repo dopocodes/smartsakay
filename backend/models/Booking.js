@@ -1,6 +1,6 @@
 const bookingSchema = new mongoose.Schema(
   {
-    bookingId: {
+    booking_id: {
       type: String,
       unique: true,
       required: true,
@@ -44,12 +44,12 @@ const bookingSchema = new mongoose.Schema(
       default: "pending",
     },
 
-    requestedAt: {
+    requested_at: {
       type: Date,
       default: Date.now,
     },
 
-    completedAt: {
+    completed_at: {
       type: Date,
     },
   },
@@ -57,3 +57,5 @@ const bookingSchema = new mongoose.Schema(
     timestamps: true,
   },
 );
+
+module.exports = mongoose.model("Booking", bookingSchema);

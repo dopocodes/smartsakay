@@ -27,3 +27,5 @@ const driverLocationSchema = new mongoose.Schema({
 driverLocationSchema.index({
   location: "2dsphere",
 });
+
+module.exports = mongoose.model("DriverLocation", driverLocationSchema);

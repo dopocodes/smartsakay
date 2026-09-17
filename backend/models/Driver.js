@@ -1,52 +1,47 @@
 const driverSchema = new mongoose.Schema(
   {
-    userId: {
+    user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
       unique: true,
     },
 
-    licenseNumber: {
+    license_number: {
       type: String,
       required: true,
       unique: true,
       trim: true,
     },
 
-    licenseImage: {
-      type: String,
-      required: true,
-    },
-
-    vehicleType: {
+    vehicle_type: {
       type: String,
       enum: ["jeepney", "tricycle", "minibus", "taxi", "bus", "van"],
       required: true,
     },
 
-    plateNumber: {
+    plate_number: {
       type: String,
       required: true,
       unique: true,
     },
 
-    assignedRoute: {
+    assigned_route: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Route",
     },
 
-    licenseImage: {
+    license_image: {
       type: String,
     },
 
-    verificationStatus: {
+    verification_status: {
       type: String,
       enum: ["pending", "verified", "rejected"],
       default: "pending",
     },
 
-    availabilityStatus: {
+    availability_status: {
       type: String,
       enum: ["offline", "available", "on_trip"],
       default: "offline",
