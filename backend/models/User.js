@@ -57,13 +57,20 @@ const userSchema = new mongoose.Schema(
 
     role: {
       type: String,
-      enum: ["passenger", "driver", "admin"],
+      enum: ["passenger", "driver", "admin", "superadmin"],
+      default: "passenger",
+    },
+
+    requested_role: {
+      type: String,
+      enum: ["passenger", "driver", "admin", "superadmin"],
       default: "passenger",
     },
 
     passenger_category: {
       type: String,
       enum: ["regular", "student", "senior_citizen", "pwd"],
+      default: "regular",
     },
 
     email_verified: {
@@ -73,7 +80,7 @@ const userSchema = new mongoose.Schema(
 
     account_status: {
       type: String,
-      enum: ["active", "suspended", "pending"],
+      enum: ["active", "suspended", "pending", "superadmin"],
       default: "pending",
     },
 
