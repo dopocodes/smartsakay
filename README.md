@@ -71,4 +71,3 @@ npm test
 - `auth.test.js`: Registration, duplicate prevention, verification, login, and health check
 - `fare.test.js`: Tariff calculations, succeeding km rates, discounts, and fare endpoints
 - `route.test.js`: Route catalog, waypoints, and route details
->>>>>>> 680a7e9 (Initial commit: SmartSakay project setup)
