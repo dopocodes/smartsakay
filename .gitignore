@@ -1,0 +1,26 @@
+node_modules/
+.env
+*.env.local
+.DS_Store
+dist/
+build/
+coverage/
+*.log
+.cache/
+
+# React Native
+mobile/android/app/build/
+mobile/ios/Pods/
+mobile/ios/build/
+
+# Server uploads
+server/uploads/
+
+# Progress tracking
+.superpowers/
+
+# Expo
+.expo/
+mobile/.expo/
+# Temporary files
+out*.html

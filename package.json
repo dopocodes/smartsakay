@@ -1,0 +1,18 @@
+{
+  "name": "smartsakay-dagupan",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartSakay Dagupan - Commuter Application for Dagupan City",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix admin install && npm --prefix mobile install",
+    "dev:server": "cd server && npm run dev",
+    "dev:admin": "cd admin && npm run dev",
+    "dev:mobile": "cd mobile && npm start",
+    "build:admin": "cd admin && npm run build",
+    "seed": "cd server && node src/seeds/index.js",
+    "test:server": "cd server && npm test"
+  },
+  "keywords": ["dagupan", "commuter", "jeepney", "fare", "ltfrb"],
+  "author": "",
+  "license": "MIT"
+}
