@@ -12,7 +12,17 @@
     "seed": "cd server && node src/seeds/index.js",
     "test:server": "cd server && npm test"
   },
-  "keywords": ["dagupan", "commuter", "jeepney", "fare", "ltfrb"],
+  "keywords": [
+    "dagupan",
+    "commuter",
+    "jeepney",
+    "fare",
+    "ltfrb"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "groq-sdk": "^1.6.0",
+    "react-native-markdown-display": "^7.0.2"
+  }
 }

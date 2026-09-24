@@ -138,16 +138,51 @@ const AssistantScreen = () => {
   // CLEAR CHAT
   // --------------------------------------------------
 
-  const clearChat = async () => {
-    const confirmed = window.confirm(
-      "Are you sure you want to delete all of your chat history? This cannot be undone.",
-    );
+  const clearChat = () => {
+    if (Platform.OS === "web") {
+      const confirmed = window.confirm(
+        "Are you sure you want to delete all of your chat history? This cannot be undone.",
+      );
 
-    if (confirmed) {
-      try {
-        await assistantAPI.clearHistory();
-      } catch (e) {
-        alert(
+      if (!confirmed) return;
+
+      performClearHistory();
+    } else {
+      Alert.alert(
+        "Clear Chat History",
+        "Are you sure you want to delete all of your chat history? This cannot be undone.",
+        [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+          {
+            text: "Delete",
+            style: "destructive",
+            onPress: performClearHistory,
+          },
+        ],
+      );
+    }
+  };
+
+  const performClearHistory = async () => {
+    try {
+      await assistantAPI.clearHistory();
+
+      setMessages([]);
+      setSessionId(null);
+      setChatHistory([]);
+      setShowFAQs(true);
+    } catch (error) {
+      console.log("Clear history error:", error);
+
+      if (Platform.OS === "web") {
+        window.alert(
+          "Unable to Clear History\n\nSomething went wrong while clearing your chat history.",
+        );
+      } else {
+        Alert.alert(
           "Unable to Clear History",
           "Something went wrong while clearing your chat history.",
         );
